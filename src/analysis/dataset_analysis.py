@@ -14,9 +14,6 @@ fh = logging.FileHandler(log_path, mode='w')
 # fh.setLevel(logging.INFO)
 logger.addHandler(fh)
 
-from model import Model1
-from .. import evaluation
-
 
 
 def run(df):

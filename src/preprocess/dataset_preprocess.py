@@ -14,9 +14,6 @@ fh = logging.FileHandler(log_path, mode='w')
 # fh.setLevel(logging.INFO)
 logger.addHandler(fh)
 
-from model import Model1
-from analysis import dataset_analysis
-
 
 def remove_nan(df):
     #NaN details
@@ -50,6 +47,6 @@ def expand_genre(df):
     #sort=False in order to get same row ordering as original dataframe
     df = df.groupby('movie_title', as_index=False, sort=False).aggregate(aggregation_functions).reindex(columns=df.columns) #https://stackoverflow.com/questions/46826773/how-can-i-merge-rows-by-same-value-in-a-column-in-pandas-with-aggregation-func
 
-    logger.info(df.head(10).to_markdown())
+    # logger.info(df.head(10).to_markdown())
     
-    return df, one_hot.columns
+    return df, one_hot

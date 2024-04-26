@@ -3,16 +3,16 @@ import torch.nn as nn
 
 class Model1(torch.nn.Module):
 
-    def __init__(self, _in_features, _output_size, _learning_rate=0.01):
+    def __init__(self, _in_features, _out_features, _learning_rate=0.01):
         super().__init__()
         self._in_features = _in_features
-        self._output_size = _output_size
+        self._out_features = _out_features
         self._learning_rate = _learning_rate
         self.lin1 = nn.Linear(in_features = _in_features, out_features = 60)
         self.act1 = nn.ReLU()
         self.lin2 = nn.Linear(in_features = 60, out_features = 30)
         self.act2 = nn.ReLU()
-        self.lin3 = nn.Linear(in_features = 30, out_features = _output_size+1)
+        self.lin3 = nn.Linear(in_features = 30, out_features = _out_features+1)
         self.act3 = nn.ReLU()
         self.act4 = nn.Softmax()
         
