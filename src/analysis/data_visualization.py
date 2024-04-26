@@ -73,8 +73,11 @@ def dataset_details(dataset_path):
                 aggregation_functions[j] = 'sum'
             else:
                 aggregation_functions[j] = 'first'
+    #reindex in order to get same column ordering as original dataframe
+    #as_index=False used to stop movie_title from becoming the index
+    #sort=False in order to get same row ordering as original dataframe
     df = df.groupby('movie_title', as_index=False, sort=False).aggregate(aggregation_functions).reindex(columns=df.columns) #https://stackoverflow.com/questions/46826773/how-can-i-merge-rows-by-same-value-in-a-column-in-pandas-with-aggregation-func
-    
+
     logger.info(df.head(10).to_markdown())
     
     
