@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 # import matplotplib as plt
 import os
+from sklearn.preprocessing import LabelEncoder
 
 import logging
 exp_name = "dataset_preprocess"
@@ -24,6 +25,8 @@ def remove_nan(df):
     df = df.dropna(how='any',axis=0)
     logger.info("Total Number of Entries remaining = {}".format(len(df)))
     return df
+
+
 
 #-------------------------------------Split on Column 'Genres'-------------------------------------
 def expand_genre(df):
@@ -50,3 +53,56 @@ def expand_genre(df):
     # logger.info(df.head(10).to_markdown())
     
     return df, one_hot
+
+
+
+#Drop these two columns which won't contribute to result
+def drop_extra_columns(df):
+    list_of_columns_to_drop = ['plot_keywords', 'movie_imdb_link']
+    df = df.drop(list_of_columns_to_drop, axis=1)
+    return df
+
+
+
+#Returns dictionary of continuous and categorical features for input
+def column_type_dict_input():
+    continuous = ['num_critic_for_reviews',
+                  'duration',
+                  'director_facebook_likes',
+                  'actor_3_facebook_likes',
+                  'actor_1_facebook_likes',
+                  'gross',
+                  'num_voted_users',
+                  'cast_total_facebook_likes',
+                  'facenumber_in_poster',
+                  'num_user_for_reviews',
+                  'budget',
+                  'actor_2_facebook_likes',
+                  'imdb_score',
+                  'aspect_ratio',
+                  'movie_facebook_likes'
+                  ]
+    categorical = ['color',
+                   'director_name',
+                   'actor_2_name',
+                   'actor_1_name',
+                   'movie_title',
+                   'actor_3_name',
+                   'language',
+                   'country',
+                   'content_rating',
+                   ]
+    dict = {}
+    dict['continuous'] = continuous
+    dict['categorical'] = categorical
+    return dict
+
+
+
+#Do label encoding based on column type (continuous or categorical)
+def label_encode(df, column_type):
+    le = LabelEncoder()
+    for i in df.columns:
+        if i in column_type['categorical']:
+            df[i] = le.fit_transform(df[i])
+    return df
