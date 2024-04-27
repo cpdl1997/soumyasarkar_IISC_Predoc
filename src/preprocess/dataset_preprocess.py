@@ -101,8 +101,10 @@ def column_type_dict_input():
 
 #Do label encoding based on column type (continuous or categorical)
 def label_encode(df, column_type):
-    le = LabelEncoder()
+    label_encoders =[]
     for i in df.columns:
         if i in column_type['categorical']:
+            le = LabelEncoder()
             df[i] = le.fit_transform(df[i])
-    return df
+            label_encoders.append(le)
+    return df, label_encoders
