@@ -37,8 +37,7 @@ class Model1(torch.nn.Module):
         x = self.act1(self.lin1(train))
         x = self.act2(self.lin2(x))
         x1 = self.lin3(x)[:,0:self._out_features-1]
-        x1=self.softmax(x1)
-        print(x1)
+        x1 = self.softmax(x1)
         x2 = self.act4(self.lin3(x)[:,self._out_features-1:self._out_features])
         output = (x1,x2)
         return output

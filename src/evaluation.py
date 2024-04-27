@@ -110,12 +110,12 @@ def topk_genres(output_genres, k=4, prob_sum_thresold=0.95):
         sum=0
         for i, val in enumerate(row):
             if i in topk_indices and sum<=prob_sum_thresold: #We consider upto k top elements or till probability sum exceeds a threshold, whichever comes earlier
-                with torch.no_grad():
-                    row[i]=1 #If in the topk of that row, add as possible genre
                 sum+=val.data
+                with torch.no_grad():
+                    row[i]=torch.tensor(1) #If in the topk of that row, add as possible genre
             else:
                 with torch.no_grad():
-                    row[i]=0 #if not in the topk, not a possible genre
+                    row[i]=torch.tensor(0) #if not in the topk, not a possible genre
     return output_genres
 
 
@@ -143,7 +143,7 @@ def run_fit(train_dataloader, model, criterion, optimizer, batch_size = 16, epoc
                 # forward + backward + optimize
                 output_genre, output_year = model(inputs)
                 with torch.no_grad():
-                    topk = topk_genres(output_genre) #convert this pre-softmax value to a multi-hot encoded vector
+                    topk = topk_genres(output_genre, k=6) #convert this pre-softmax value to a multi-hot encoded vector
                     output_genre=topk.reshape(1,-1) #Since we create new tensors this can lead to computational graph getting cutoff. So we do it in no_grad()
                 
                 logger.info("Predicted Genre = {}\nActual Genre = {}".format(output_genre, labels_genre))
