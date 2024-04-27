@@ -105,17 +105,7 @@ def run_fit_year(train_dataloader, model, criterion, optimizer, batch_size = 16,
 
 
 
-def run(_learning_rate=0.01, _batch_size=100, _epoch=100, number_of_hidden_layers=10, hidden_layer_nodes=64):
-    dataset_name = "p1_movie_metadata.csv"
-    dataset_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "dataset", dataset_name)
-    df = pd.read_csv(dataset_path)
-    df = dataset_preprocess.drop_extra_columns(df=df) #Remove worthless columns that won't contribute to result
-    df = dataset_preprocess.remove_nan(df=df) #Drop NaN values before proceeding with statistics
-    logger.info(df.head().to_markdown())
-    # dataset_analysis.run(df=df)
-    df, genre = dataset_preprocess.expand_genre(df=df)
-    train_split = 0.8
-
+def prepare_dataloaders(df, genre, train_split):
     x_train, y_train, x_test, y_test = dataframe_manipulation.split_test_train(df, genre, train_split)
     dict_of_column_types_input = dataset_preprocess.column_type_dict_input()
 
@@ -144,17 +134,43 @@ def run(_learning_rate=0.01, _batch_size=100, _epoch=100, number_of_hidden_layer
     train_dataloader_year = torch.utils.data.DataLoader(train_dataset_year, batch_size=_batch_size)
     test_dataloader_year = torch.utils.data.DataLoader(test_dataset_year, batch_size=_batch_size)
 
-    #model details
+    return train_dataloader_genre, test_dataloader_genre, train_dataloader_year, test_dataloader_year, len(x_train.columns)
+
+
+
+def prepare_model(input_feature_length, number_of_genres, number_of_hidden_layers, hidden_layer_nodes):
     _hidden_layers_data = [] #used to dynamically generate the hidden layers
     for i in range(number_of_hidden_layers):
          _hidden_layers_data.append((hidden_layer_nodes, nn.ReLU())) #all hidden layers have ReLU activation function
 
-    model_genre = Model2.Model2Genre(_in_features = len(x_train.columns), _out_features = len(genre.columns), hidden_layers_data = _hidden_layers_data, _learning_rate = _learning_rate,)
-    model_year = Model2.Model2Year(_in_features = len(x_train.columns), hidden_layers_data = _hidden_layers_data, _learning_rate = _learning_rate,)
+    model_genre = Model2.Model2Genre(_in_features = input_feature_length, _out_features = number_of_genres, hidden_layers_data = _hidden_layers_data, _learning_rate = _learning_rate,)
+    model_year = Model2.Model2Year(_in_features = input_feature_length, hidden_layers_data = _hidden_layers_data, _learning_rate = _learning_rate,)
     criterion_genre = nn.CrossEntropyLoss()
     criterion_year = nn.MSELoss()
     optimizer_genre = optim.Adam(model_genre.parameters())
     optimizer_year = optim.Adam(model_year.parameters())
+
+    return model_genre, model_year, criterion_genre, criterion_year, optimizer_genre, optimizer_year
+
+
+
+def run(_learning_rate=0.01, _batch_size=100, _epoch=100, number_of_hidden_layers=10, hidden_layer_nodes=64):
+    dataset_name = "p1_movie_metadata.csv"
+    dataset_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "dataset", dataset_name)
+    df = pd.read_csv(dataset_path)
+    df = dataset_preprocess.drop_extra_columns(df=df) #Remove worthless columns that won't contribute to result
+    df = dataset_preprocess.remove_nan(df=df) #Drop NaN values before proceeding with statistics
+    logger.info(df.head().to_markdown())
+    # dataset_analysis.run(df=df)
+    df, genre = dataset_preprocess.expand_genre(df=df)
+    train_split = 0.8
+
+    #prepare dataloaders
+    train_dataloader_genre, test_dataloader_genre, train_dataloader_year, test_dataloader_year, input_feature_length = prepare_dataloaders(df, genre, train_split)
+
+    #prepare model
+    number_of_genres = len(genre.columns)
+    model_genre, model_year, criterion_genre, criterion_year, optimizer_genre, optimizer_year = prepare_model(input_feature_length, number_of_genres, number_of_hidden_layers, hidden_layer_nodes)
 
     #run fit
     run_fit_genre(train_dataloader_genre, model_genre, criterion_genre, optimizer_genre, _batch_size, _epoch)
