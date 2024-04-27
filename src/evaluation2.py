@@ -105,7 +105,7 @@ def run_fit_year(train_dataloader, model, criterion, optimizer, batch_size = 16,
 
 
 
-def run(_learning_rate=0.01, _batch_size=100, _epoch=100):
+def run(_learning_rate=0.01, _batch_size=100, _epoch=100, number_of_hidden_layers=10, hidden_layer_nodes=64):
     dataset_name = "p1_movie_metadata.csv"
     dataset_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "dataset", dataset_name)
     df = pd.read_csv(dataset_path)
@@ -145,8 +145,12 @@ def run(_learning_rate=0.01, _batch_size=100, _epoch=100):
     test_dataloader_year = torch.utils.data.DataLoader(test_dataset_year, batch_size=_batch_size)
 
     #model details
-    model_genre = Model2.Model2Genre(_in_features = len(x_train.columns), _out_features = len(genre.columns), _learning_rate = _learning_rate,)
-    model_year = Model2.Model2Year(_in_features = len(x_train.columns), _learning_rate = _learning_rate,)
+    _hidden_layers_data = [] #used to dynamically generate the hidden layers
+    for i in range(number_of_hidden_layers):
+         _hidden_layers_data.append((hidden_layer_nodes, nn.ReLU())) #all hidden layers have ReLU activation function
+
+    model_genre = Model2.Model2Genre(_in_features = len(x_train.columns), _out_features = len(genre.columns), hidden_layers_data = _hidden_layers_data, _learning_rate = _learning_rate,)
+    model_year = Model2.Model2Year(_in_features = len(x_train.columns), hidden_layers_data = _hidden_layers_data, _learning_rate = _learning_rate,)
     criterion_genre = nn.CrossEntropyLoss()
     criterion_year = nn.MSELoss()
     optimizer_genre = optim.Adam(model_genre.parameters())
@@ -161,4 +165,6 @@ if __name__=="__main__":
     _learning_rate = 0.01
     _batch_size = 1
     _epoch = 100
-    run(_learning_rate, _batch_size, _epoch)
+    _number_of_hidden_layers=10
+    _hidden_layer_nodes=64
+    run(_learning_rate, _batch_size, _epoch, _number_of_hidden_layers, _hidden_layer_nodes)
