@@ -1,0 +1,187 @@
+
+-------------------------------------NaN Values-------------------------------------
+Number of NaN values in column color = 19
+Number of NaN values in column director_name = 104
+Number of NaN values in column num_critic_for_reviews = 50
+Number of NaN values in column duration = 15
+Number of NaN values in column director_facebook_likes = 104
+Number of NaN values in column actor_3_facebook_likes = 23
+Number of NaN values in column actor_2_name = 13
+Number of NaN values in column actor_1_facebook_likes = 7
+Number of NaN values in column gross = 884
+Number of NaN values in column genres = 0
+Number of NaN values in column actor_1_name = 7
+Number of NaN values in column movie_title = 0
+Number of NaN values in column num_voted_users = 0
+Number of NaN values in column cast_total_facebook_likes = 0
+Number of NaN values in column actor_3_name = 23
+Number of NaN values in column facenumber_in_poster = 13
+Number of NaN values in column num_user_for_reviews = 21
+Number of NaN values in column language = 14
+Number of NaN values in column country = 5
+Number of NaN values in column content_rating = 303
+Number of NaN values in column budget = 492
+Number of NaN values in column title_year = 108
+Number of NaN values in column actor_2_facebook_likes = 13
+Number of NaN values in column imdb_score = 0
+Number of NaN values in column aspect_ratio = 329
+Number of NaN values in column movie_facebook_likes = 0
+We will drop all NaN values.
+Total Number of Entries remaining = 3769
+|    | color   | director_name     |   num_critic_for_reviews |   duration |   director_facebook_likes |   actor_3_facebook_likes | actor_2_name     |   actor_1_facebook_likes |       gross | genres                          | actor_1_name    | movie_title                              |   num_voted_users |   cast_total_facebook_likes | actor_3_name         |   facenumber_in_poster |   num_user_for_reviews | language   | country   | content_rating   |    budget |   title_year |   actor_2_facebook_likes |   imdb_score |   aspect_ratio |   movie_facebook_likes |
+|---:|:--------|:------------------|-------------------------:|-----------:|--------------------------:|-------------------------:|:-----------------|-------------------------:|------------:|:--------------------------------|:----------------|:-----------------------------------------|------------------:|----------------------------:|:---------------------|-----------------------:|-----------------------:|:-----------|:----------|:-----------------|----------:|-------------:|-------------------------:|-------------:|---------------:|-----------------------:|
+|  0 | Color   | James Cameron     |                      723 |        178 |                         0 |                      855 | Joel David Moore |                     1000 | 7.60506e+08 | Action|Adventure|Fantasy|Sci-Fi | CCH Pounder     | Avatar                                   |            886204 |                        4834 | Wes Studi            |                      0 |                   3054 | English    | USA       | PG-13            | 2.37e+08  |         2009 |                      936 |          7.9 |           1.78 |                  33000 |
+|  1 | Color   | Gore Verbinski    |                      302 |        169 |                       563 |                     1000 | Orlando Bloom    |                    40000 | 3.09404e+08 | Action|Adventure|Fantasy        | Johnny Depp     | Pirates of the Caribbean: At World's End |            471220 |                       48350 | Jack Davenport       |                      0 |                   1238 | English    | USA       | PG-13            | 3e+08     |         2007 |                     5000 |          7.1 |           2.35 |                      0 |
+|  2 | Color   | Sam Mendes        |                      602 |        148 |                         0 |                      161 | Rory Kinnear     |                    11000 | 2.00074e+08 | Action|Adventure|Thriller       | Christoph Waltz | Spectre                                  |            275868 |                       11700 | Stephanie Sigman     |                      1 |                    994 | English    | UK        | PG-13            | 2.45e+08  |         2015 |                      393 |          6.8 |           2.35 |                  85000 |
+|  3 | Color   | Christopher Nolan |                      813 |        164 |                     22000 |                    23000 | Christian Bale   |                    27000 | 4.48131e+08 | Action|Thriller                 | Tom Hardy       | The Dark Knight Rises                    |           1144337 |                      106759 | Joseph Gordon-Levitt |                      0 |                   2701 | English    | USA       | PG-13            | 2.5e+08   |         2012 |                    23000 |          8.5 |           2.35 |                 164000 |
+|  5 | Color   | Andrew Stanton    |                      462 |        132 |                       475 |                      530 | Samantha Morton  |                      640 | 7.30587e+07 | Action|Adventure|Sci-Fi         | Daryl Sabara    | John Carter                              |            212204 |                        1873 | Polly Walker         |                      1 |                    738 | English    | USA       | PG-13            | 2.637e+08 |         2012 |                      632 |          6.6 |           2.35 |                  24000 |
+Epoch 1: Training Loss = 401301175.000, (Predicted: 0.0, Actual: 2009.0), Testing Error = 400015500.000 , (Predicted: 2.6382789611816406, Actual: 1986.0)
+Epoch 2: Training Loss = 399875050.000, (Predicted: 3.7902302742004395, Actual: 2009.0), Testing Error = 397105050.000 , (Predicted: 5.672894477844238, Actual: 1986.0)
+Epoch 3: Training Loss = 397619925.000, (Predicted: 11.318641662597656, Actual: 2009.0), Testing Error = 395033800.000 , (Predicted: 11.408432006835938, Actual: 1986.0)
+Epoch 4: Training Loss = 394201500.000, (Predicted: 19.142717361450195, Actual: 2009.0), Testing Error = 394233425.000 , (Predicted: 11.219982147216797, Actual: 1986.0)
+Epoch 5: Training Loss = 389465875.000, (Predicted: 26.953428268432617, Actual: 2009.0), Testing Error = 390544025.000 , (Predicted: 33.22203063964844, Actual: 1986.0)
+Epoch 6: Training Loss = 383243750.000, (Predicted: 42.25123596191406, Actual: 2009.0), Testing Error = 380139575.000 , (Predicted: 73.54334259033203, Actual: 1986.0)
+Epoch 7: Training Loss = 375259300.000, (Predicted: 62.56285858154297, Actual: 2009.0), Testing Error = 365955175.000 , (Predicted: 154.10829162597656, Actual: 1986.0)
+Epoch 8: Training Loss = 365176300.000, (Predicted: 76.77289581298828, Actual: 2009.0), Testing Error = 343952500.000 , (Predicted: 197.92369079589844, Actual: 1986.0)
+Epoch 9: Training Loss = 353243675.000, (Predicted: 86.18743896484375, Actual: 2009.0), Testing Error = 324579700.000 , (Predicted: 243.14584350585938, Actual: 1986.0)
+Epoch 10: Training Loss = 339387025.000, (Predicted: 109.72288513183594, Actual: 2009.0), Testing Error = 318883350.000 , (Predicted: 278.26104736328125, Actual: 1986.0)
+Epoch 11: Training Loss = 323709700.000, (Predicted: 234.5677490234375, Actual: 2009.0), Testing Error = 306351000.000 , (Predicted: 284.58203125, Actual: 1986.0)
+Epoch 12: Training Loss = 306438425.000, (Predicted: 281.3075256347656, Actual: 2009.0), Testing Error = 307197850.000 , (Predicted: 299.1629333496094, Actual: 1986.0)
+Epoch 13: Training Loss = 287293925.000, (Predicted: 333.4385681152344, Actual: 2009.0), Testing Error = 283603325.000 , (Predicted: 382.880615234375, Actual: 1986.0)
+Epoch 14: Training Loss = 266694975.000, (Predicted: 390.61767578125, Actual: 2009.0), Testing Error = 248563175.000 , (Predicted: 423.3992919921875, Actual: 1986.0)
+Epoch 15: Training Loss = 244821250.000, (Predicted: 464.2622375488281, Actual: 2009.0), Testing Error = 241518050.000 , (Predicted: 543.50634765625, Actual: 1986.0)
+Epoch 16: Training Loss = 222202300.000, (Predicted: 597.67333984375, Actual: 2009.0), Testing Error = 208093450.000 , (Predicted: 500.4410400390625, Actual: 1986.0)
+Epoch 17: Training Loss = 199053112.500, (Predicted: 561.1439208984375, Actual: 2009.0), Testing Error = 171976137.500 , (Predicted: 724.5193481445312, Actual: 1986.0)
+Epoch 18: Training Loss = 175278162.500, (Predicted: 662.9974365234375, Actual: 2009.0), Testing Error = 145861500.000 , (Predicted: 883.6559448242188, Actual: 1986.0)
+Epoch 19: Training Loss = 151547387.500, (Predicted: 908.3212890625, Actual: 2009.0), Testing Error = 129148012.500 , (Predicted: 811.3267211914062, Actual: 1986.0)
+Epoch 20: Training Loss = 129371637.500, (Predicted: 1038.2305908203125, Actual: 2009.0), Testing Error = 99867031.250 , (Predicted: 1187.412841796875, Actual: 1986.0)
+Epoch 21: Training Loss = 108133362.500, (Predicted: 1123.9071044921875, Actual: 2009.0), Testing Error = 113255037.500 , (Predicted: 863.7142333984375, Actual: 1986.0)
+Epoch 22: Training Loss = 88793125.000, (Predicted: 1226.1480712890625, Actual: 2009.0), Testing Error = 133473362.500 , (Predicted: 896.2555541992188, Actual: 1986.0)
+Epoch 23: Training Loss = 70401825.000, (Predicted: 930.7974853515625, Actual: 2009.0), Testing Error = 102717275.000 , (Predicted: 863.0717163085938, Actual: 1986.0)
+Epoch 24: Training Loss = 53114412.500, (Predicted: 1009.6151733398438, Actual: 2009.0), Testing Error = 85755575.000 , (Predicted: 1126.3387451171875, Actual: 1986.0)
+Epoch 25: Training Loss = 39067465.625, (Predicted: 1193.12841796875, Actual: 2009.0), Testing Error = 74141406.250 , (Predicted: 1272.2880859375, Actual: 1986.0)
+Epoch 26: Training Loss = 27514600.000, (Predicted: 1429.305419921875, Actual: 2009.0), Testing Error = 16586395.312 , (Predicted: 1661.8223876953125, Actual: 1986.0)
+Epoch 27: Training Loss = 17946151.562, (Predicted: 1426.080810546875, Actual: 2009.0), Testing Error = 9857085.156 , (Predicted: 1815.7357177734375, Actual: 1986.0)
+Epoch 28: Training Loss = 11290139.844, (Predicted: 1693.6920166015625, Actual: 2009.0), Testing Error = 6608765.625 , (Predicted: 1965.4150390625, Actual: 1986.0)
+Epoch 29: Training Loss = 6649583.594, (Predicted: 1764.6190185546875, Actual: 2009.0), Testing Error = 2726996.289 , (Predicted: 2078.644775390625, Actual: 1986.0)
+Epoch 30: Training Loss = 3487150.391, (Predicted: 1741.336181640625, Actual: 2009.0), Testing Error = 2373792.188 , (Predicted: 2195.9052734375, Actual: 1986.0)
+Epoch 31: Training Loss = 1911346.875, (Predicted: 1847.6964111328125, Actual: 2009.0), Testing Error = 1811616.992 , (Predicted: 2176.12109375, Actual: 1986.0)
+Epoch 32: Training Loss = 839192.383, (Predicted: 1967.851806640625, Actual: 2009.0), Testing Error = 1365863.477 , (Predicted: 2123.712890625, Actual: 1986.0)
+Epoch 33: Training Loss = 664516.064, (Predicted: 2002.7802734375, Actual: 2009.0), Testing Error = 2757851.758 , (Predicted: 2177.1650390625, Actual: 1986.0)
+Epoch 34: Training Loss = 627521.484, (Predicted: 2255.897705078125, Actual: 2009.0), Testing Error = 9987885.938 , (Predicted: 2360.8876953125, Actual: 1986.0)
+Epoch 35: Training Loss = 608065.234, (Predicted: 2218.8720703125, Actual: 2009.0), Testing Error = 17476787.500 , (Predicted: 2462.316162109375, Actual: 1986.0)
+Epoch 36: Training Loss = 556577.832, (Predicted: 1966.45849609375, Actual: 2009.0), Testing Error = 18147735.938 , (Predicted: 2439.04638671875, Actual: 1986.0)
+Epoch 37: Training Loss = 541723.633, (Predicted: 2037.38623046875, Actual: 2009.0), Testing Error = 14314617.188 , (Predicted: 2337.003662109375, Actual: 1986.0)
+Epoch 38: Training Loss = 423962.891, (Predicted: 2059.20849609375, Actual: 2009.0), Testing Error = 11234032.031 , (Predicted: 2254.6630859375, Actual: 1986.0)
+Epoch 39: Training Loss = 261139.307, (Predicted: 1999.529296875, Actual: 2009.0), Testing Error = 16062870.312 , (Predicted: 2366.14501953125, Actual: 1986.0)
+Epoch 40: Training Loss = 218888.843, (Predicted: 2049.970458984375, Actual: 2009.0), Testing Error = 18207025.000 , (Predicted: 2451.809326171875, Actual: 1986.0)
+Epoch 41: Training Loss = 102465.039, (Predicted: 2006.9849853515625, Actual: 2009.0), Testing Error = 17624148.438 , (Predicted: 2483.605224609375, Actual: 1986.0)
+Epoch 42: Training Loss = 70357.367, (Predicted: 1955.6702880859375, Actual: 2009.0), Testing Error = 14734103.125 , (Predicted: 2471.8056640625, Actual: 1986.0)
+Epoch 43: Training Loss = 58381.659, (Predicted: 1972.051513671875, Actual: 2009.0), Testing Error = 9394207.812 , (Predicted: 2395.305419921875, Actual: 1986.0)
+Epoch 44: Training Loss = 48540.237, (Predicted: 1967.1402587890625, Actual: 2009.0), Testing Error = 5642124.609 , (Predicted: 2312.962646484375, Actual: 1986.0)
+Epoch 45: Training Loss = 46186.929, (Predicted: 1955.3480224609375, Actual: 2009.0), Testing Error = 3507395.312 , (Predicted: 2249.184814453125, Actual: 1986.0)
+Epoch 46: Training Loss = 48778.549, (Predicted: 1958.0899658203125, Actual: 2009.0), Testing Error = 1829972.266 , (Predicted: 2184.427734375, Actual: 1986.0)
+Epoch 47: Training Loss = 48886.603, (Predicted: 1963.591552734375, Actual: 2009.0), Testing Error = 922167.480 , (Predicted: 2130.11279296875, Actual: 1986.0)
+Epoch 48: Training Loss = 50116.058, (Predicted: 1977.96826171875, Actual: 2009.0), Testing Error = 493106.689 , (Predicted: 2090.19482421875, Actual: 1986.0)
+Epoch 49: Training Loss = 34034.674, (Predicted: 1983.02294921875, Actual: 2009.0), Testing Error = 307868.921 , (Predicted: 2062.28955078125, Actual: 1986.0)
+Epoch 50: Training Loss = 61310.278, (Predicted: 1965.637939453125, Actual: 2009.0), Testing Error = 209214.160 , (Predicted: 2036.803466796875, Actual: 1986.0)
+Epoch 51: Training Loss = 68638.678, (Predicted: 1970.9794921875, Actual: 2009.0), Testing Error = 153503.577 , (Predicted: 2009.045166015625, Actual: 1986.0)
+Epoch 52: Training Loss = 55748.352, (Predicted: 2013.7332763671875, Actual: 2009.0), Testing Error = 159155.957 , (Predicted: 1981.2734375, Actual: 1986.0)
+Epoch 53: Training Loss = 76660.077, (Predicted: 2037.511962890625, Actual: 2009.0), Testing Error = 209099.414 , (Predicted: 1957.77294921875, Actual: 1986.0)
+Epoch 54: Training Loss = 22948.640, (Predicted: 2016.257080078125, Actual: 2009.0), Testing Error = 217325.708 , (Predicted: 1957.1746826171875, Actual: 1986.0)
+Epoch 55: Training Loss = 22870.291, (Predicted: 2009.6768798828125, Actual: 2009.0), Testing Error = 171974.182 , (Predicted: 1962.162109375, Actual: 1986.0)
+Epoch 56: Training Loss = 21699.606, (Predicted: 2012.1116943359375, Actual: 2009.0), Testing Error = 137904.541 , (Predicted: 1969.6025390625, Actual: 1986.0)
+Epoch 57: Training Loss = 22714.108, (Predicted: 1996.566162109375, Actual: 2009.0), Testing Error = 106239.490 , (Predicted: 1983.0797119140625, Actual: 1986.0)
+Epoch 58: Training Loss = 18868.602, (Predicted: 2004.9447021484375, Actual: 2009.0), Testing Error = 82101.239 , (Predicted: 1993.27685546875, Actual: 1986.0)
+Epoch 59: Training Loss = 16662.680, (Predicted: 2010.9052734375, Actual: 2009.0), Testing Error = 68381.183 , (Predicted: 2001.2042236328125, Actual: 1986.0)
+Epoch 60: Training Loss = 15017.468, (Predicted: 2004.4117431640625, Actual: 2009.0), Testing Error = 60334.937 , (Predicted: 2009.2921142578125, Actual: 1986.0)
+Epoch 61: Training Loss = 15579.971, (Predicted: 2010.706787109375, Actual: 2009.0), Testing Error = 53256.921 , (Predicted: 2012.885986328125, Actual: 1986.0)
+Epoch 62: Training Loss = 14429.173, (Predicted: 2009.572021484375, Actual: 2009.0), Testing Error = 54887.457 , (Predicted: 2016.858154296875, Actual: 1986.0)
+Epoch 63: Training Loss = 13112.471, (Predicted: 2003.10595703125, Actual: 2009.0), Testing Error = 57582.721 , (Predicted: 2021.4334716796875, Actual: 1986.0)
+Epoch 64: Training Loss = 13137.146, (Predicted: 2005.8460693359375, Actual: 2009.0), Testing Error = 53388.922 , (Predicted: 2021.6328125, Actual: 1986.0)
+Epoch 65: Training Loss = 12320.490, (Predicted: 2004.9581298828125, Actual: 2009.0), Testing Error = 48811.841 , (Predicted: 2020.905029296875, Actual: 1986.0)
+Epoch 66: Training Loss = 11995.443, (Predicted: 2001.661865234375, Actual: 2009.0), Testing Error = 46032.608 , (Predicted: 2020.5772705078125, Actual: 1986.0)
+Epoch 67: Training Loss = 11851.363, (Predicted: 2003.818115234375, Actual: 2009.0), Testing Error = 45014.090 , (Predicted: 2020.4033203125, Actual: 1986.0)
+Epoch 68: Training Loss = 11403.855, (Predicted: 2005.85400390625, Actual: 2009.0), Testing Error = 43654.959 , (Predicted: 2019.8167724609375, Actual: 1986.0)
+Epoch 69: Training Loss = 10993.119, (Predicted: 2004.9288330078125, Actual: 2009.0), Testing Error = 41787.726 , (Predicted: 2018.3768310546875, Actual: 1986.0)
+Epoch 70: Training Loss = 10882.395, (Predicted: 2005.40185546875, Actual: 2009.0), Testing Error = 40270.718 , (Predicted: 2016.5164794921875, Actual: 1986.0)
+Epoch 71: Training Loss = 10633.886, (Predicted: 2007.414794921875, Actual: 2009.0), Testing Error = 39427.173 , (Predicted: 2015.796142578125, Actual: 1986.0)
+Epoch 72: Training Loss = 10413.148, (Predicted: 2007.0867919921875, Actual: 2009.0), Testing Error = 39151.154 , (Predicted: 2014.7994384765625, Actual: 1986.0)
+Epoch 73: Training Loss = 10269.337, (Predicted: 2005.1507568359375, Actual: 2009.0), Testing Error = 39105.579 , (Predicted: 2014.4176025390625, Actual: 1986.0)
+Epoch 74: Training Loss = 10085.064, (Predicted: 2005.456787109375, Actual: 2009.0), Testing Error = 38923.117 , (Predicted: 2014.612060546875, Actual: 1986.0)
+Epoch 75: Training Loss = 10006.908, (Predicted: 2006.96435546875, Actual: 2009.0), Testing Error = 39206.772 , (Predicted: 2017.6148681640625, Actual: 1986.0)
+Epoch 76: Training Loss = 9811.635, (Predicted: 2007.258544921875, Actual: 2009.0), Testing Error = 39026.578 , (Predicted: 2018.251953125, Actual: 1986.0)
+Epoch 77: Training Loss = 9622.280, (Predicted: 2006.527099609375, Actual: 2009.0), Testing Error = 38315.479 , (Predicted: 2017.6297607421875, Actual: 1986.0)
+Epoch 78: Training Loss = 9573.717, (Predicted: 2006.2796630859375, Actual: 2009.0), Testing Error = 37915.762 , (Predicted: 2015.327392578125, Actual: 1986.0)
+Epoch 79: Training Loss = 9455.910, (Predicted: 2007.094482421875, Actual: 2009.0), Testing Error = 39182.300 , (Predicted: 2011.989501953125, Actual: 1986.0)
+Epoch 80: Training Loss = 9388.397, (Predicted: 2008.0975341796875, Actual: 2009.0), Testing Error = 41982.822 , (Predicted: 2009.42138671875, Actual: 1986.0)
+Epoch 81: Training Loss = 9256.303, (Predicted: 2007.80615234375, Actual: 2009.0), Testing Error = 42458.289 , (Predicted: 2008.3297119140625, Actual: 1986.0)
+Epoch 82: Training Loss = 9110.868, (Predicted: 2006.4251708984375, Actual: 2009.0), Testing Error = 42883.118 , (Predicted: 2007.4327392578125, Actual: 1986.0)
+Epoch 83: Training Loss = 9195.013, (Predicted: 2005.40673828125, Actual: 2009.0), Testing Error = 43559.253 , (Predicted: 2006.8167724609375, Actual: 1986.0)
+Epoch 84: Training Loss = 9120.061, (Predicted: 2006.2752685546875, Actual: 2009.0), Testing Error = 40889.059 , (Predicted: 2008.487548828125, Actual: 1986.0)
+Epoch 85: Training Loss = 9190.105, (Predicted: 2009.2637939453125, Actual: 2009.0), Testing Error = 38295.566 , (Predicted: 2011.31298828125, Actual: 1986.0)
+Epoch 86: Training Loss = 10021.594, (Predicted: 2011.671875, Actual: 2009.0), Testing Error = 36171.973 , (Predicted: 2013.717529296875, Actual: 1986.0)
+Epoch 87: Training Loss = 9927.454, (Predicted: 2009.83642578125, Actual: 2009.0), Testing Error = 35757.953 , (Predicted: 2013.992431640625, Actual: 1986.0)
+Epoch 88: Training Loss = 10804.585, (Predicted: 2002.2059326171875, Actual: 2009.0), Testing Error = 36215.869 , (Predicted: 2011.703857421875, Actual: 1986.0)
+Epoch 89: Training Loss = 20450.175, (Predicted: 1995.8179931640625, Actual: 2009.0), Testing Error = 30655.026 , (Predicted: 2008.4464111328125, Actual: 1986.0)
+Epoch 90: Training Loss = 22204.311, (Predicted: 2003.180419921875, Actual: 2009.0), Testing Error = 29838.547 , (Predicted: 2003.8018798828125, Actual: 1986.0)
+Epoch 91: Training Loss = 32751.196, (Predicted: 2027.7181396484375, Actual: 2009.0), Testing Error = 43882.724 , (Predicted: 1999.1624755859375, Actual: 1986.0)
+Epoch 92: Training Loss = 104812.598, (Predicted: 2049.2451171875, Actual: 2009.0), Testing Error = 57165.942 , (Predicted: 1982.9627685546875, Actual: 1986.0)
+Epoch 93: Training Loss = 116800.281, (Predicted: 2030.2093505859375, Actual: 2009.0), Testing Error = 400679.785 , (Predicted: 1948.482177734375, Actual: 1986.0)
+Epoch 94: Training Loss = 183764.673, (Predicted: 1951.71044921875, Actual: 2009.0), Testing Error = 530713.086 , (Predicted: 1930.002197265625, Actual: 1986.0)
+Epoch 95: Training Loss = 106856.165, (Predicted: 1960.7857666015625, Actual: 2009.0), Testing Error = 797753.809 , (Predicted: 1922.1492919921875, Actual: 1986.0)
+Epoch 96: Training Loss = 38922.006, (Predicted: 2035.695068359375, Actual: 2009.0), Testing Error = 976344.824 , (Predicted: 1913.7576904296875, Actual: 1986.0)
+Epoch 97: Training Loss = 42510.126, (Predicted: 2011.393310546875, Actual: 2009.0), Testing Error = 934791.797 , (Predicted: 1949.3331298828125, Actual: 1986.0)
+Epoch 98: Training Loss = 45775.821, (Predicted: 2054.02587890625, Actual: 2009.0), Testing Error = 662406.250 , (Predicted: 1959.4168701171875, Actual: 1986.0)
+Epoch 99: Training Loss = 22473.082, (Predicted: 2028.3492431640625, Actual: 2009.0), Testing Error = 478525.830 , (Predicted: 1989.3265380859375, Actual: 1986.0)
+Epoch 100: Training Loss = 29732.388, (Predicted: 2036.6246337890625, Actual: 2009.0), Testing Error = 346673.804 , (Predicted: 2003.202880859375, Actual: 1986.0)
+Epoch 101: Training Loss = 20571.281, (Predicted: 2021.435791015625, Actual: 2009.0), Testing Error = 268951.099 , (Predicted: 2018.249267578125, Actual: 1986.0)
+Epoch 102: Training Loss = 22237.137, (Predicted: 2019.474853515625, Actual: 2009.0), Testing Error = 197032.739 , (Predicted: 2026.73681640625, Actual: 1986.0)
+Epoch 103: Training Loss = 16763.658, (Predicted: 2017.810546875, Actual: 2009.0), Testing Error = 157650.745 , (Predicted: 2031.702880859375, Actual: 1986.0)
+Epoch 104: Training Loss = 17648.192, (Predicted: 2008.4654541015625, Actual: 2009.0), Testing Error = 136615.222 , (Predicted: 2036.3271484375, Actual: 1986.0)
+Epoch 105: Training Loss = 15522.113, (Predicted: 2014.2501220703125, Actual: 2009.0), Testing Error = 96271.063 , (Predicted: 2032.2977294921875, Actual: 1986.0)
+Epoch 106: Training Loss = 14840.721, (Predicted: 2002.79833984375, Actual: 2009.0), Testing Error = 86451.617 , (Predicted: 2034.0050048828125, Actual: 1986.0)
+Epoch 107: Training Loss = 14009.570, (Predicted: 2012.130615234375, Actual: 2009.0), Testing Error = 59158.490 , (Predicted: 2027.1431884765625, Actual: 1986.0)
+Epoch 108: Training Loss = 12280.653, (Predicted: 2005.1328125, Actual: 2009.0), Testing Error = 50378.705 , (Predicted: 2025.5609130859375, Actual: 1986.0)
+Epoch 109: Training Loss = 12562.721, (Predicted: 2011.7408447265625, Actual: 2009.0), Testing Error = 40749.188 , (Predicted: 2021.0198974609375, Actual: 1986.0)
+Epoch 110: Training Loss = 10932.224, (Predicted: 2008.5556640625, Actual: 2009.0), Testing Error = 41074.203 , (Predicted: 2020.183837890625, Actual: 1986.0)
+Epoch 111: Training Loss = 11266.985, (Predicted: 2010.52490234375, Actual: 2009.0), Testing Error = 40697.034 , (Predicted: 2019.37060546875, Actual: 1986.0)
+Epoch 112: Training Loss = 10538.046, (Predicted: 2011.148681640625, Actual: 2009.0), Testing Error = 38974.966 , (Predicted: 2019.08203125, Actual: 1986.0)
+Epoch 113: Training Loss = 10289.243, (Predicted: 2009.2999267578125, Actual: 2009.0), Testing Error = 41305.487 , (Predicted: 2021.957763671875, Actual: 1986.0)
+Epoch 114: Training Loss = 10147.932, (Predicted: 2011.541748046875, Actual: 2009.0), Testing Error = 40598.233 , (Predicted: 2020.8154296875, Actual: 1986.0)
+Epoch 115: Training Loss = 9496.293, (Predicted: 2008.7720947265625, Actual: 2009.0), Testing Error = 41988.123 , (Predicted: 2019.1802978515625, Actual: 1986.0)
+Epoch 116: Training Loss = 9457.857, (Predicted: 2010.226318359375, Actual: 2009.0), Testing Error = 42073.950 , (Predicted: 2018.484619140625, Actual: 1986.0)
+Epoch 117: Training Loss = 9080.055, (Predicted: 2009.241943359375, Actual: 2009.0), Testing Error = 40706.143 , (Predicted: 2019.5411376953125, Actual: 1986.0)
+Epoch 118: Training Loss = 8939.793, (Predicted: 2008.4332275390625, Actual: 2009.0), Testing Error = 40632.785 , (Predicted: 2021.2515869140625, Actual: 1986.0)
+Epoch 119: Training Loss = 8795.728, (Predicted: 2009.385986328125, Actual: 2009.0), Testing Error = 39312.894 , (Predicted: 2019.4158935546875, Actual: 1986.0)
+Epoch 120: Training Loss = 8611.536, (Predicted: 2008.3309326171875, Actual: 2009.0), Testing Error = 39048.489 , (Predicted: 2018.2906494140625, Actual: 1986.0)
+Epoch 121: Training Loss = 8464.300, (Predicted: 2008.9967041015625, Actual: 2009.0), Testing Error = 41682.037 , (Predicted: 2014.644287109375, Actual: 1986.0)
+Epoch 122: Training Loss = 8315.033, (Predicted: 2009.324462890625, Actual: 2009.0), Testing Error = 40727.344 , (Predicted: 2014.276611328125, Actual: 1986.0)
+Epoch 123: Training Loss = 8205.759, (Predicted: 2008.7471923828125, Actual: 2009.0), Testing Error = 38670.758 , (Predicted: 2014.892822265625, Actual: 1986.0)
+Epoch 124: Training Loss = 8106.711, (Predicted: 2009.164794921875, Actual: 2009.0), Testing Error = 36705.954 , (Predicted: 2015.39599609375, Actual: 1986.0)
+Epoch 125: Training Loss = 7989.363, (Predicted: 2008.932861328125, Actual: 2009.0), Testing Error = 34998.099 , (Predicted: 2015.9588623046875, Actual: 1986.0)
+Epoch 126: Training Loss = 7911.363, (Predicted: 2008.4869384765625, Actual: 2009.0), Testing Error = 34181.650 , (Predicted: 2015.287353515625, Actual: 1986.0)
+Epoch 127: Training Loss = 7816.328, (Predicted: 2008.716552734375, Actual: 2009.0), Testing Error = 34657.401 , (Predicted: 2012.148681640625, Actual: 1986.0)
+Epoch 128: Training Loss = 7751.599, (Predicted: 2008.6517333984375, Actual: 2009.0), Testing Error = 34236.292 , (Predicted: 2011.0003662109375, Actual: 1986.0)
+Epoch 129: Training Loss = 7662.669, (Predicted: 2008.36328125, Actual: 2009.0), Testing Error = 32834.879 , (Predicted: 2011.6915283203125, Actual: 1986.0)
+Epoch 130: Training Loss = 7577.520, (Predicted: 2008.5042724609375, Actual: 2009.0), Testing Error = 32076.245 , (Predicted: 2011.2177734375, Actual: 1986.0)
+Epoch 131: Training Loss = 7533.400, (Predicted: 2008.6298828125, Actual: 2009.0), Testing Error = 32785.349 , (Predicted: 2009.582763671875, Actual: 1986.0)
+Epoch 132: Training Loss = 7457.452, (Predicted: 2008.5023193359375, Actual: 2009.0), Testing Error = 31690.115 , (Predicted: 2009.4931640625, Actual: 1986.0)
+Epoch 133: Training Loss = 7390.522, (Predicted: 2008.519287109375, Actual: 2009.0), Testing Error = 29770.761 , (Predicted: 2011.0108642578125, Actual: 1986.0)
+Epoch 134: Training Loss = 7350.045, (Predicted: 2008.6727294921875, Actual: 2009.0), Testing Error = 29223.291 , (Predicted: 2011.0264892578125, Actual: 1986.0)
+Epoch 135: Training Loss = 7294.970, (Predicted: 2008.6527099609375, Actual: 2009.0), Testing Error = 28558.432 , (Predicted: 2010.53515625, Actual: 1986.0)
+Epoch 136: Training Loss = 7232.797, (Predicted: 2008.4637451171875, Actual: 2009.0), Testing Error = 27638.150 , (Predicted: 2010.7591552734375, Actual: 1986.0)
+Epoch 137: Training Loss = 7186.028, (Predicted: 2008.6494140625, Actual: 2009.0), Testing Error = 26519.199 , (Predicted: 2012.1917724609375, Actual: 1986.0)
+Epoch 138: Training Loss = 7139.215, (Predicted: 2008.6710205078125, Actual: 2009.0), Testing Error = 25955.197 , (Predicted: 2014.81884765625, Actual: 1986.0)
+Epoch 139: Training Loss = 7093.105, (Predicted: 2008.5762939453125, Actual: 2009.0), Testing Error = 25992.584 , (Predicted: 2016.4974365234375, Actual: 1986.0)
+Epoch 140: Training Loss = 7046.224, (Predicted: 2008.505126953125, Actual: 2009.0), Testing Error = 25874.863 , (Predicted: 2016.58154296875, Actual: 1986.0)
+Epoch 141: Training Loss = 7010.208, (Predicted: 2008.571044921875, Actual: 2009.0), Testing Error = 25814.499 , (Predicted: 2016.173583984375, Actual: 1986.0)
+Epoch 142: Training Loss = 6957.675, (Predicted: 2008.9111328125, Actual: 2009.0), Testing Error = 25449.022 , (Predicted: 2015.3045654296875, Actual: 1986.0)
+Epoch 143: Training Loss = 6921.477, (Predicted: 2008.80322265625, Actual: 2009.0), Testing Error = 24302.682 , (Predicted: 2014.4683837890625, Actual: 1986.0)
+Epoch 144: Training Loss = 6890.287, (Predicted: 2008.684326171875, Actual: 2009.0), Testing Error = 23771.237 , (Predicted: 2013.9747314453125, Actual: 1986.0)
+Epoch 145: Training Loss = 6837.538, (Predicted: 2008.620361328125, Actual: 2009.0), Testing Error = 24222.385 , (Predicted: 2012.0086669921875, Actual: 1986.0)
+Epoch 146: Training Loss = 6800.146, (Predicted: 2008.7535400390625, Actual: 2009.0), Testing Error = 25772.705 , (Predicted: 2010.173095703125, Actual: 1986.0)
+Epoch 147: Training Loss = 6768.484, (Predicted: 2008.818603515625, Actual: 2009.0), Testing Error = 28557.108 , (Predicted: 2008.7041015625, Actual: 1986.0)
+Epoch 148: Training Loss = 6736.588, (Predicted: 2008.7730712890625, Actual: 2009.0), Testing Error = 32478.036 , (Predicted: 2006.8447265625, Actual: 1986.0)
+Epoch 149: Training Loss = 6703.205, (Predicted: 2008.59228515625, Actual: 2009.0), Testing Error = 36392.749 , (Predicted: 2004.37255859375, Actual: 1986.0)
+Epoch 150: Training Loss = 6655.680, (Predicted: 2008.32470703125, Actual: 2009.0), Testing Error = 33981.299 , (Predicted: 2005.225830078125, Actual: 1986.0)

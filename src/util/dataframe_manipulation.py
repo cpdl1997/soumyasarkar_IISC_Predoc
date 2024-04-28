@@ -34,4 +34,5 @@ def split_test_train(df, genre, train_split=0.7):
         x_test = pd.concat([x_test, df_test.drop(columns_y, axis=1)], ignore_index=True)
         y_test = pd.concat([y_test, df_test.drop(columns_x, axis=1)], ignore_index=True)
 
+
     return x_train, y_train, x_test, y_test

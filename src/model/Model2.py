@@ -26,10 +26,11 @@ class Model2Genre(torch.nn.Module):
         super().__init__()
         self.input_size = _in_features
         self.learning_rate = _learning_rate
-        self.layers = nn.ModuleList()
+        self.layers = nn.Sequential()
 
         for size, activation in hidden_layers_data:
             self.layers.append(nn.Linear(_in_features, size))
+            self.layers.append(nn.BatchNorm1d(size))
             _in_features = size  # For the next layer
             if activation is not None:
                 self.layers.append(activation)
@@ -40,15 +41,34 @@ class Model2Genre(torch.nn.Module):
         # self.to(self.device)
         
     def forward(self, input_data):
-        for layer in self.layers:
-            input_data = layer(input_data)
+        # for layer in self.layers:
+        #     input_data = layer(input_data)\
+        input_data = self.layers(input_data)
         input_data = self.softmax(input_data)
         return input_data
-        
+    
+    #https://discuss.pytorch.org/t/how-to-implement-the-exactly-same-softmax-as-f-softmax-by-pytorch/44263/6
     def softmax(self, x):
         """Compute softmax values for each sets of scores in x."""
-        e_x = torch.exp(x/1e6)
-        return e_x/torch.sum(e_x)
+        # for row in x:
+        #     print("row initially = ", row)
+        #     row = torch.exp(row/1e4)
+        #     print("row middle = ", row)
+        #     row = row/torch.sum(row)
+        #     # print("row afterwards = ", row)
+        # # print("x = ", x)
+        
+        maxes = torch.max(x, 1, keepdim=True)[0]
+        
+        x_exp = torch.exp((x-maxes)/1e3)
+        
+        x_exp_sum = torch.sum(x_exp, 1, keepdim=True)
+        
+        x = x_exp/x_exp_sum
+        
+        # with torch.no_grad():
+        #     x = output_custom
+        return x
     
     
 
@@ -78,10 +98,11 @@ class Model2Year(torch.nn.Module):
         super().__init__()
         self.input_size = _in_features
         self.learning_rate = _learning_rate
-        self.layers = nn.ModuleList()
+        self.layers = nn.Sequential()
 
         for size, activation in hidden_layers_data:
             self.layers.append(nn.Linear(_in_features, size))
+            self.layers.append(nn.BatchNorm1d(size))
             _in_features = size  # For the next layer
             if activation is not None:
                 self.layers.append(activation)
@@ -93,6 +114,8 @@ class Model2Year(torch.nn.Module):
         # self.to(self.device)
         
     def forward(self, input_data):
-        for layer in self.layers:
-            input_data = layer(input_data)
+        # for layer in self.layers:
+        #     input_data = layer(input_data)
+        input_data = self.layers(input_data)
+            
         return input_data
